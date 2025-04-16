@@ -25,10 +25,7 @@
                     <a href="index.html" title="Home">Home</a>
                 </li>
                 <li>
-                    <a href="" title="Sobre">Sobre</a>
-                </li>
-                <li>
-                    <a href="" title="Galeria de Imagens">Galeria de Imagens</a>
+                    <a href="galeria.html" title="Galeria de Imagens">Galeria de Imagens</a>
                 </li>
                 <li>
                     <a href="contato.html" title="Contato">Contato</a>
@@ -43,8 +40,7 @@
     </header>
 
     <h1>Entre em contato:</h1>
-
-    <main>
+    <main class="main-contato">
     <section class="sobre">
     <form id="contatoForm">
         <label for="nome">Nome:</label>
@@ -58,10 +54,11 @@
       
         <button type="submit" class="btn">Enviar</button>
         <p id="mensagemErro" style="color: red;"></p>
+        <p id="mensagemSucesso" style="color: green; display: none;">Mensagem enviada com sucesso!</p>
       </form>
     </section>
     </main>
-
+    
     <footer class="footer">
         <div class="container center">
             <p>
@@ -77,5 +74,27 @@
             </p>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const form = document.getElementById('contatoForm');
+      
+          form.addEventListener('submit', function (event) {
+            event.preventDefault(); 
+      
+            const nome = form.nome.value.trim();
+            const email = form.email.value.trim();
+            const mensagem = form.mensagem.value.trim();
+      
+            if (nome && email && mensagem) {
+              alert("Mensagem enviada com sucesso!");
+
+              form.reset();
+            } else {
+              alert("Por favor, preencha todos os campos.");
+            }
+          });
+        });
+      </script>
 </body>
-</html>
+</html> 
