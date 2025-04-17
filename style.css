@@ -261,3 +261,15 @@ h1 {
 .col img:hover {
     transform: scale(1.05);
 }
+
+.botaojogar {
+  display: inline-block;
+  background-color: #3c8f6e;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  font-family: verdana;
+}
