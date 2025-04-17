@@ -46,7 +46,8 @@
                     <span><i></i> Jogar The forgotten Grove</span>
                 </h1>
 
-                <iframe src="JOGO/index.html" width="100%" height="600px"></iframe>
+                <iframe src="JOGO/index.html" style="width: 100vw; height: 100vh; border: none; display: block; margin: 0 auto;"></iframe>
+
 
             </div>
         </section>
@@ -69,14 +70,23 @@
     </footer>
 
     <script>
-        window.addEventListener("keydown", function(e) {
-          const teclasQueRolam = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", " "];
-      
-          if (teclasQueRolam.includes(e.key)) {
-            e.preventDefault(); 
-          }
-        }, false);
-      </script>
+    window.addEventListener("keydown", function(e) {
+        const teclasQueRolam = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", " "];
+        if (teclasQueRolam.includes(e.key)) {
+            e.preventDefault();
+        }
+    }, { passive: false });
+
+    const iframe = document.querySelector("iframe");
+
+    iframe.addEventListener("load", () => {
+        iframe.contentWindow.focus();
+    });
+
+    iframe.addEventListener("click", () => {
+        iframe.contentWindow.focus();
+    });
+</script>
 
 </body>
 </html>
